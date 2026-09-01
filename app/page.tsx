@@ -43,6 +43,21 @@ const otherChurches = [
     address: 'Viena 2807',
     map: 'https://www.google.com/maps/search/?api=1&query=Viena%202807%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
   },
+  {
+    name: 'Barrio Santa Brígida',
+    address: 'Pedro F. de Uriarte 3711 · San Miguel',
+    map: 'https://www.google.com/maps/search/?api=1&query=Iglesia%20Adventista%20del%20S%C3%A9ptimo%20D%C3%ADa%20Barrio%20Santa%20Br%C3%ADgida%2C%20Pedro%20F.%20de%20Uriarte%203711%2C%20San%20Miguel%2C%20Buenos%20Aires',
+  },
+  {
+    name: 'Barrio Máximo',
+    address: 'Francisco Bilbao 10398 · Cuartel V, Moreno',
+    map: 'https://www.google.com/maps/search/?api=1&query=Iglesia%20Adventista%20del%20S%C3%A9ptimo%20D%C3%ADa%20Barrio%20M%C3%A1ximo%2C%20Francisco%20Bilbao%2010398%2C%20Cuartel%20V%2C%20Moreno%2C%20Buenos%20Aires',
+  },
+  {
+    name: 'Cuartel V',
+    address: 'Miguel Gerónimo Galarza 5406 · Cuartel V, Moreno',
+    map: 'https://www.google.com/maps/search/?api=1&query=Iglesia%20Adventista%20del%207%C2%BA%20D%C3%ADa%2C%20Miguel%20Ger%C3%B3nimo%20Galarza%205406%2C%20Cuartel%20V%2C%20Moreno%2C%20Buenos%20Aires',
+  },
 ];
 
 const socialMedia = [
@@ -304,7 +319,7 @@ export default function Home() {
           <div className="other-churches" data-reveal>
             <div className="other-churches-heading">
               <p className="section-kicker">Cerca tuyo</p>
-              <h3>Otras iglesias adventistas en José C. Paz</h3>
+              <h3>Otras iglesias adventistas en José C. Paz y alrededor</h3>
             </div>
             <div className="church-list">
               {otherChurches.map((church) => (
