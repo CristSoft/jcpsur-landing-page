@@ -95,6 +95,20 @@ export default function Home() {
         <div className="hero-content">
           <p className="eyebrow"><span /> Una comunidad para vos</p>
           <h1>Un lugar para<br /><em>encontrarnos.</em></h1>
+          <div className="hero-socials" aria-label="Seguinos en redes sociales">
+            {socialMedia.map(({ name, handle, href, Icon }) => (
+              <a
+                key={name}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${name}: ${handle} (abre en una pestaña nueva)`}
+                title={`${name}: ${handle}`}
+              >
+                <Icon />
+              </a>
+            ))}
+          </div>
           <p className="hero-lead">
             Compartimos la fe, estudiamos la Biblia, oramos y crecemos juntos como familia.
             <strong> Todos son bienvenidos.</strong>
