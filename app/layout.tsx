@@ -12,8 +12,10 @@ const lora = Lora({
   subsets: ['latin'],
 });
 
+const siteUrl = 'https://adventistasjosecpaz.web.app';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://iglesia-jose-c-paz-sur.cristsoft.chatgpt.site'),
+  metadataBase: new URL(siteUrl),
   title: 'Iglesia Adventista José C. Paz Sur',
   description:
     'Una comunidad cristiana en José C. Paz. Conocé nuestros horarios, nuestra historia y encontrá un espacio de fe, esperanza y encuentro.',
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
     description: 'Fe, esperanza y encuentro. Conocé nuestra comunidad, horarios y recursos para estudiar la Biblia.',
     type: 'website',
     locale: 'es_AR',
-    url: 'https://iglesia-jose-c-paz-sur.cristsoft.chatgpt.site',
+    url: siteUrl,
     images: [
       {
         url: '/og.png',
