@@ -13,6 +13,7 @@ import {
   Shirt,
   Users,
 } from 'lucide-react';
+import { MotionEffects } from '../components/motion-effects';
 
 const otherChurches = [
   {
@@ -45,6 +46,7 @@ const otherChurches = [
 export default function Home() {
   return (
     <main>
+      <MotionEffects />
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Iglesia Adventista José C. Paz Sur, inicio">
           <img src="/logo-jcp-sur.svg" alt="" />
@@ -65,6 +67,8 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="hero-glow" aria-hidden="true" />
+        <div className="hero-orbit hero-orbit-one" aria-hidden="true" />
+        <div className="hero-orbit hero-orbit-two" aria-hidden="true" />
         <div className="hero-content">
           <p className="eyebrow"><span /> Una comunidad para vos</p>
           <h1>Un lugar para<br /><em>encontrarnos.</em></h1>
@@ -102,11 +106,20 @@ export default function Home() {
         <div className="hero-watermark" aria-hidden="true">
           <img src="/logo-jcp-sur.svg" alt="" />
         </div>
+        <a className="scroll-cue" href="#nosotros" aria-label="Continuar hacia nuestra historia">
+          <span /> Seguí descubriendo
+        </a>
       </section>
 
+      <div className="story-strip" aria-label="Nuestros valores">
+        <span>Fe que acompaña</span><i aria-hidden="true" />
+        <span>Esperanza compartida</span><i aria-hidden="true" />
+        <span>Comunidad que abraza</span>
+      </div>
+
       <section className="welcome" id="nosotros">
-        <p className="section-kicker">Desde 1987 en José C. Paz</p>
-        <div className="welcome-grid">
+        <p className="section-kicker" data-reveal>Desde 1987 en José C. Paz</p>
+        <div className="welcome-grid" data-reveal>
           <h2>Fe, esperanza<br />y <em>comunidad.</em></h2>
           <div className="welcome-copy">
             <p>
@@ -123,7 +136,7 @@ export default function Home() {
       </section>
 
       <section className="services" id="servicios">
-        <div className="services-heading">
+        <div className="services-heading" data-reveal>
           <div>
             <p className="section-kicker">Durante toda la semana</p>
             <h2>Servicios permanentes<br />de JCP Sur.</h2>
@@ -134,43 +147,43 @@ export default function Home() {
           </p>
         </div>
         <div className="services-grid">
-          <article className="service-card service-featured">
+          <article className="service-card service-featured" data-reveal data-pointer-card>
             <span className="service-icon"><MessageCircle aria-hidden="true" /></span>
             <p>Sábados · 10:00 hs</p>
             <h3>Sermón</h3>
             <span>Conferencia bíblica</span>
           </article>
-          <article className="service-card">
+          <article className="service-card" data-reveal data-pointer-card>
             <span className="service-icon"><BookOpen aria-hidden="true" /></span>
             <p>Sábados · 11:30 hs</p>
             <h3>Escuela Sabática</h3>
             <span>Escuela bíblica</span>
           </article>
-          <article className="service-card">
+          <article className="service-card" data-reveal data-pointer-card>
             <span className="service-icon"><HeartHandshake aria-hidden="true" /></span>
             <p>Miércoles · 18:00 hs</p>
             <h3>Reunión de oración</h3>
             <span>19:00 hs en verano</span>
           </article>
-          <article className="service-card">
+          <article className="service-card" data-reveal data-pointer-card>
             <span className="service-icon"><Users aria-hidden="true" /></span>
             <p>Miércoles · 16:00 hs</p>
             <h3>ASA</h3>
             <span>Asistencia Social Adventista</span>
           </article>
-          <article className="service-card">
+          <article className="service-card" data-reveal data-pointer-card>
             <span className="service-icon"><Shirt aria-hidden="true" /></span>
             <p>Miércoles por medio · 16:00 hs</p>
             <h3>Ropero Solidario</h3>
             <span>Ayuda abierta a la comunidad</span>
           </article>
-          <article className="service-card">
+          <article className="service-card" data-reveal data-pointer-card>
             <span className="service-icon"><Users aria-hidden="true" /></span>
             <p>Sábados · 18:00 hs</p>
             <h3>Reunión Joven</h3>
             <span>19:00 hs en verano</span>
           </article>
-          <article className="service-card service-wide">
+          <article className="service-card service-wide" data-reveal data-pointer-card>
             <span className="service-icon"><Compass aria-hidden="true" /></span>
             <p>Domingos · 10:00 hs</p>
             <h3>Club de Conquistadores</h3>
@@ -181,7 +194,7 @@ export default function Home() {
 
       <section className="bible-section" id="biblia">
         <div className="bible-inner">
-          <div className="bible-heading">
+          <div className="bible-heading" data-reveal>
             <span className="bible-icon"><BookOpenText aria-hidden="true" /></span>
             <p className="section-kicker">Un camino para descubrir</p>
             <h2>¿Querés conocer más sobre la Biblia?</h2>
@@ -190,7 +203,7 @@ export default function Home() {
               aprender y conversar con nosotros.
             </p>
           </div>
-          <div className="resource-list">
+          <div className="resource-list" data-reveal>
             <a href="https://www.adventistas.org/es/estudios-biblicos/" target="_blank" rel="noreferrer">
               <span><small>Recursos en línea</small><strong>Estudios bíblicos</strong></span>
               <ExternalLink aria-hidden="true" />
@@ -208,7 +221,7 @@ export default function Home() {
       </section>
 
       <section className="location" id="ubicacion">
-        <div className="location-copy">
+        <div className="location-copy" data-reveal>
           <p className="section-kicker">Te esperamos</p>
           <h2>Encontranos en<br />José C. Paz.</h2>
           <p>
@@ -225,7 +238,7 @@ export default function Home() {
           </a>
         </div>
         <div className="location-side">
-          <div className="address-card">
+          <div className="address-card" data-reveal data-pointer-card>
             <span className="pin"><MapPin aria-hidden="true" /></span>
             <small>Nuestra dirección</small>
             <strong>Av. Gaspar Campos 5738</strong>
@@ -236,7 +249,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="other-churches">
+          <div className="other-churches" data-reveal>
             <div className="other-churches-heading">
               <p className="section-kicker">Cerca tuyo</p>
               <h3>Otras iglesias adventistas en José C. Paz</h3>
