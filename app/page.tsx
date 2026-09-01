@@ -1,12 +1,46 @@
 import {
   ArrowDown,
   ArrowRight,
+  BookOpen,
   BookOpenText,
   CalendarDays,
   Clock3,
+  Compass,
   ExternalLink,
+  HeartHandshake,
   MapPin,
+  MessageCircle,
+  Shirt,
+  Users,
 } from 'lucide-react';
+
+const otherChurches = [
+  {
+    name: 'José C. Paz Centro',
+    address: 'Santiago de Compostela 477',
+    map: 'https://www.google.com/maps/search/?api=1&query=Santiago%20de%20Compostela%20477%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
+  },
+  {
+    name: 'Barrio Vucetich',
+    address: 'Santa Marta 4279',
+    map: 'https://www.google.com/maps/search/?api=1&query=Santa%20Marta%204279%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
+  },
+  {
+    name: 'Barrio Sagrada Familia',
+    address: 'Uspallata 2024',
+    map: 'https://www.google.com/maps/search/?api=1&query=Uspallata%202024%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
+  },
+  {
+    name: 'Barrio Primavera',
+    address: 'Adolfo Alsina 5989',
+    map: 'https://www.google.com/maps/search/?api=1&query=Adolfo%20Alsina%205989%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
+  },
+  {
+    name: 'Barrio Frino',
+    address: 'Viena 2807',
+    map: 'https://www.google.com/maps/search/?api=1&query=Viena%202807%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
+  },
+];
 
 export default function Home() {
   return (
@@ -21,7 +55,7 @@ export default function Home() {
         </a>
         <nav aria-label="Navegación principal">
           <a href="#nosotros">Nosotros</a>
-          <a href="#horarios">Horarios</a>
+          <a href="#servicios">Servicios</a>
           <a href="#biblia">Conocé más</a>
         </nav>
         <a className="header-cta" href="#ubicacion">
@@ -88,6 +122,63 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="services" id="servicios">
+        <div className="services-heading">
+          <div>
+            <p className="section-kicker">Durante toda la semana</p>
+            <h2>Servicios permanentes<br />de JCP Sur.</h2>
+          </div>
+          <p>
+            Espacios para adorar, aprender, orar, ayudar y crecer en comunidad. Elegí el que
+            quieras compartir con nosotros.
+          </p>
+        </div>
+        <div className="services-grid">
+          <article className="service-card service-featured">
+            <span className="service-icon"><MessageCircle aria-hidden="true" /></span>
+            <p>Sábados · 10:00 hs</p>
+            <h3>Sermón</h3>
+            <span>Conferencia bíblica</span>
+          </article>
+          <article className="service-card">
+            <span className="service-icon"><BookOpen aria-hidden="true" /></span>
+            <p>Sábados · 11:30 hs</p>
+            <h3>Escuela Sabática</h3>
+            <span>Escuela bíblica</span>
+          </article>
+          <article className="service-card">
+            <span className="service-icon"><HeartHandshake aria-hidden="true" /></span>
+            <p>Miércoles · 18:00 hs</p>
+            <h3>Reunión de oración</h3>
+            <span>19:00 hs en verano</span>
+          </article>
+          <article className="service-card">
+            <span className="service-icon"><Users aria-hidden="true" /></span>
+            <p>Miércoles · 16:00 hs</p>
+            <h3>ASA</h3>
+            <span>Asistencia Social Adventista</span>
+          </article>
+          <article className="service-card">
+            <span className="service-icon"><Shirt aria-hidden="true" /></span>
+            <p>Miércoles por medio · 16:00 hs</p>
+            <h3>Ropero Solidario</h3>
+            <span>Ayuda abierta a la comunidad</span>
+          </article>
+          <article className="service-card">
+            <span className="service-icon"><Users aria-hidden="true" /></span>
+            <p>Sábados · 18:00 hs</p>
+            <h3>Reunión Joven</h3>
+            <span>19:00 hs en verano</span>
+          </article>
+          <article className="service-card service-wide">
+            <span className="service-icon"><Compass aria-hidden="true" /></span>
+            <p>Domingos · 10:00 hs</p>
+            <h3>Club de Conquistadores</h3>
+            <span>Actividades tipo scouts para niños y adolescentes</span>
+          </article>
+        </div>
+      </section>
+
       <section className="bible-section" id="biblia">
         <div className="bible-inner">
           <div className="bible-heading">
@@ -133,14 +224,31 @@ export default function Home() {
             Abrir en Google Maps <ExternalLink aria-hidden="true" />
           </a>
         </div>
-        <div className="address-card">
-          <span className="pin"><MapPin aria-hidden="true" /></span>
-          <small>Nuestra dirección</small>
-          <strong>Av. Gaspar Campos 5738</strong>
-          <span>José C. Paz, Buenos Aires</span>
-          <div className="address-times">
-            <p><b>Sábados</b><span>10:00 y 18:00 hs</span></p>
-            <p><b>Miércoles</b><span>18:00 hs</span></p>
+        <div className="location-side">
+          <div className="address-card">
+            <span className="pin"><MapPin aria-hidden="true" /></span>
+            <small>Nuestra dirección</small>
+            <strong>Av. Gaspar Campos 5738</strong>
+            <span>José C. Paz, Buenos Aires</span>
+            <div className="address-times">
+              <p><b>Sábados</b><span>10:00 y 18:00 hs</span></p>
+              <p><b>Miércoles</b><span>18:00 hs</span></p>
+            </div>
+          </div>
+
+          <div className="other-churches">
+            <div className="other-churches-heading">
+              <p className="section-kicker">Cerca tuyo</p>
+              <h3>Otras iglesias adventistas en José C. Paz</h3>
+            </div>
+            <div className="church-list">
+              {otherChurches.map((church) => (
+                <a key={church.name} href={church.map} target="_blank" rel="noreferrer">
+                  <span><strong>{church.name}</strong><small>{church.address}</small></span>
+                  <ExternalLink aria-hidden="true" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
