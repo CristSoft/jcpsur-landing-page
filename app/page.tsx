@@ -73,7 +73,7 @@ export default function Home() {
             <strong> Todos son bienvenidos.</strong>
           </p>
           <div className="hero-actions">
-            <a className="primary-link" href="#horarios">
+            <a className="primary-link" href="#servicios">
               Ver días y horarios <CalendarDays aria-hidden="true" />
             </a>
             <a className="text-link" href="#nosotros">
@@ -82,7 +82,7 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="next-meeting" id="horarios" aria-label="Próximas reuniones">
+        <aside className="next-meeting" aria-label="Próximas reuniones">
           <div className="meeting-topline">
             <span>Nos encontramos</span>
             <Clock3 aria-hidden="true" />
