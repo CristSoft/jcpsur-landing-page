@@ -329,7 +329,7 @@ footer > a:last-child svg { width: 16px; transform: rotate(-90deg); }
   section[id] { scroll-margin-top: 126px; }
   .site-header { height: 116px; grid-template-rows: 70px 46px; }
   .brand img { width: 42px; height: 42px; }
-  .brand small { display: none; }
+  .brand small { margin-top: 4px; font-size: 8px; letter-spacing: 0; white-space: nowrap; }
   .site-header nav { gap: 2px; }
   .site-header nav a { min-height: 40px; padding: 0 11px; font-size: 10px; }
   .header-cta { font-size: 0; gap: 0; width: 42px; height: 42px; justify-content: center; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; }
