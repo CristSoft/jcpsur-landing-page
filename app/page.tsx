@@ -12,6 +12,7 @@ import {
   MessageCircle,
   Shirt,
   Users,
+  Volleyball,
 } from 'lucide-react';
 import { MotionEffects } from '../components/motion-effects';
 import { FacebookIcon, InstagramIcon, YouTubeIcon } from '../components/social-icons';
@@ -220,11 +221,17 @@ export default function Home() {
             <h3>Reunión Joven</h3>
             <span>19:00 hs en verano</span>
           </article>
-          <article className="service-card service-wide" data-reveal data-pointer-card>
+          <article className="service-card" data-reveal data-pointer-card>
             <span className="service-icon"><Compass aria-hidden="true" /></span>
             <p>Domingos · 10:00 hs</p>
             <h3>Club de Conquistadores</h3>
             <span>Actividades tipo scouts para niños y adolescentes</span>
+          </article>
+          <article className="service-card" data-reveal data-pointer-card>
+            <span className="service-icon"><Volleyball aria-hidden="true" /></span>
+            <p>Sábados · 20:00 a 23:00 hs</p>
+            <h3>Vóley abierto</h3>
+            <span>Actividad deportiva abierta a la comunidad.</span>
           </article>
         </div>
       </section>

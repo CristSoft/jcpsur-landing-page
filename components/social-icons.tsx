@@ -5,8 +5,12 @@ type SocialIconProps = SVGProps<SVGSVGElement>;
 export function YouTubeIcon(props: SocialIconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-      <rect x="2" y="5" width="20" height="14" rx="5" fill="currentColor" />
-      <path d="m10 9 5 3-5 3V9Z" fill="white" />
+      <path
+        d="M7 5h10a5 5 0 0 1 5 5v4a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5v-4a5 5 0 0 1 5-5Zm3 4v6l5-3-5-3Z"
+        fill="currentColor"
+        fillRule="evenodd"
+        clipRule="evenodd"
+      />
     </svg>
   );
 }
