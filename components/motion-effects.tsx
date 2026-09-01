@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 
 export function MotionEffects() {
   const progressRef = useRef<HTMLSpanElement>(null);
+  const backToTopRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -85,6 +86,7 @@ export function MotionEffects() {
       const max = document.documentElement.scrollHeight - window.innerHeight;
       const progress = max > 0 ? window.scrollY / max : 0;
       progressRef.current?.style.setProperty('--scroll-progress', String(progress));
+      backToTopRef.current?.toggleAttribute('data-visible', window.scrollY > 360);
       root.style.setProperty('--page-scroll', String(window.scrollY));
       frame = 0;
     };
@@ -110,8 +112,15 @@ export function MotionEffects() {
   }, []);
 
   return (
-    <div className="scroll-progress" aria-hidden="true">
-      <span ref={progressRef} />
-    </div>
+    <>
+      <div className="scroll-progress" aria-hidden="true">
+        <span ref={progressRef} />
+      </div>
+      <a ref={backToTopRef} className="back-to-top" href="#inicio" aria-label="Volver al inicio">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <path d="m6 11 6-6 6 6M12 5v14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </a>
+    </>
   );
 }
