@@ -252,10 +252,11 @@ section[id] { scroll-margin-top: 104px; }
 .services-heading > p { max-width: 470px; margin: 0 0 8px; color: #5b7486; font-size: 16px; line-height: 1.7; }
 .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .service-card { --spot-x: 50%; --spot-y: 50%; --tilt-x: 0deg; --tilt-y: 0deg; position: relative; isolation: isolate; overflow: hidden; min-height: 240px; padding: 28px; display: flex; flex-direction: column; border: 1px solid #d6e8ef; border-radius: 16px; background: rgba(255,255,255,.88); transform: perspective(800px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)); transform-style: preserve-3d; transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease; }
-.service-card::before { content: ''; position: absolute; z-index: -1; inset: 0; opacity: 0; pointer-events: none; background: radial-gradient(260px circle at var(--spot-x) var(--spot-y), rgba(72,190,222,.16), transparent 65%); transition: opacity .25s ease; }
+.service-card::before { content: ''; position: absolute; z-index: 1; inset: 0; opacity: 0; pointer-events: none; background: radial-gradient(260px circle at var(--spot-x) var(--spot-y), rgba(72,190,222,.16), transparent 65%); transition: opacity .25s ease; }
 .service-card:hover { transform: perspective(800px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(-5px); border-color: #b7dce9; box-shadow: 0 22px 50px rgba(31,92,119,.11); }
 .service-card:hover::before { opacity: 1; }
-.service-card > * { transform: translateZ(14px); }
+.service-card > *:not(.service-image) { position: relative; z-index: 2; max-width: 62%; transform: translateZ(14px); }
+.service-image { position: absolute; z-index: 0; inset: 10px 0 0 auto; width: 54%; height: calc(100% - 10px); object-fit: contain; object-position: right bottom; opacity: .8; pointer-events: none; user-select: none; }
 .service-featured { grid-column: span 2; color: white; border-color: transparent; background: linear-gradient(125deg, #073b62, #087faf); }
 .service-featured::before { background: radial-gradient(300px circle at var(--spot-x) var(--spot-y), rgba(127,225,242,.22), transparent 66%); }
 .service-icon { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: auto; border-radius: 50%; color: #087faf; background: #dcf3fa; }

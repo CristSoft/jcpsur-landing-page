@@ -186,48 +186,56 @@ export default function Home() {
         </div>
         <div className="services-grid">
           <article className="service-card service-featured" data-reveal data-pointer-card>
+            <img className="service-image" src="/img/01_sermon.png" alt="" aria-hidden="true" />
             <span className="service-icon"><MessageCircle aria-hidden="true" /></span>
             <p>Sábados · 10:00 hs</p>
             <h3>Sermón</h3>
             <span>Conferencia bíblica</span>
           </article>
           <article className="service-card" data-reveal data-pointer-card>
+            <img className="service-image" src="/img/02_escuela_sabatica.png" alt="" aria-hidden="true" />
             <span className="service-icon"><BookOpen aria-hidden="true" /></span>
             <p>Sábados · 11:30 hs</p>
             <h3>Escuela Sabática</h3>
             <span>Escuela bíblica</span>
           </article>
           <article className="service-card" data-reveal data-pointer-card>
+            <img className="service-image" src="/img/03_reunion_de_oracion.png" alt="" aria-hidden="true" />
             <span className="service-icon"><HeartHandshake aria-hidden="true" /></span>
             <p>Miércoles · 18:00 hs</p>
             <h3>Reunión de oración</h3>
             <span>19:00 hs en verano</span>
           </article>
           <article className="service-card" data-reveal data-pointer-card>
+            <img className="service-image" src="/img/04_ASA.png" alt="" aria-hidden="true" />
             <span className="service-icon"><Users aria-hidden="true" /></span>
             <p>Miércoles · 16:00 hs</p>
             <h3>ASA</h3>
             <span>Asistencia Social Adventista</span>
           </article>
           <article className="service-card" data-reveal data-pointer-card>
+            <img className="service-image" src="/img/05_ropero_solidario.png" alt="" aria-hidden="true" />
             <span className="service-icon"><Shirt aria-hidden="true" /></span>
             <p>Miércoles por medio · 16:00 hs</p>
             <h3>Ropero Solidario</h3>
             <span>Ayuda abierta a la comunidad</span>
           </article>
           <article className="service-card" data-reveal data-pointer-card>
+            <img className="service-image" src="/img/06_reunion_joven.png" alt="" aria-hidden="true" />
             <span className="service-icon"><Users aria-hidden="true" /></span>
             <p>Sábados · 18:00 hs</p>
             <h3>Reunión Joven</h3>
             <span>19:00 hs en verano</span>
           </article>
           <article className="service-card" data-reveal data-pointer-card>
+            <img className="service-image" src="/img/07_voley_abierto.png" alt="" aria-hidden="true" />
             <span className="service-icon"><Volleyball aria-hidden="true" /></span>
             <p>Sábados · 20:00 a 23:00 hs</p>
             <h3>Vóley abierto</h3>
             <span>Actividad deportiva abierta a la comunidad.</span>
           </article>
           <article className="service-card" data-reveal data-pointer-card>
+            <img className="service-image" src="/img/08_club_de_conquistadores.png" alt="" aria-hidden="true" />
             <span className="service-icon"><Compass aria-hidden="true" /></span>
             <p>Domingos · 10:00 hs</p>
             <h3>Club de Conquistadores</h3>
