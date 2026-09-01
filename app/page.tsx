@@ -81,6 +81,7 @@ export default function Home() {
           <a href="#nosotros">Nosotros</a>
           <a href="#servicios">Servicios</a>
           <a href="#biblia">Conocé más</a>
+          <a href="#redes">Redes sociales</a>
         </nav>
         <a className="header-cta" href="#ubicacion">
           Cómo llegar <MapPin aria-hidden="true" />
@@ -288,7 +289,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="social-section" aria-labelledby="social-title">
+      <section className="social-section" id="redes" aria-labelledby="social-title">
         <div className="social-heading" data-reveal>
           <p className="section-kicker">Conectados toda la semana</p>
           <h2 id="social-title">Seguinos en redes.</h2>
