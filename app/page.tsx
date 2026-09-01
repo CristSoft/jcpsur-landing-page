@@ -215,6 +215,13 @@ export default function Home() {
             <span>Escuela bíblica</span>
           </article>
           <article className="service-card" data-reveal data-pointer-card>
+            <img className="service-image service-image-children" src="/img/09_clases_biblicas_ninos.png" alt="" aria-hidden="true" />
+            <span className="service-icon"><BookOpen aria-hidden="true" /></span>
+            <p>Sábados · 11:30 hs</p>
+            <h3>Clases bíblicas para niños</h3>
+            <span>Estudio de la Biblia por grupos de edad</span>
+          </article>
+          <article className="service-card" data-reveal data-pointer-card>
             <img className="service-image" src="/img/03_reunion_de_oracion.png" alt="" aria-hidden="true" />
             <span className="service-icon"><HeartHandshake aria-hidden="true" /></span>
             <p>Miércoles · 18:00 hs</p>
@@ -271,7 +278,7 @@ export default function Home() {
             </p>
           </div>
           <div className="resource-list" data-reveal>
-            <a href="https://www.adventistas.org/es/estudios-biblicos/" target="_blank" rel="noreferrer">
+            <a href="/Cursos_B%C3%ADblicos_NT2026_Cat%C3%A1logo_Oficial_(16).pdf" target="_blank" rel="noreferrer">
               <span><small>Recursos en línea</small><strong>Estudios bíblicos</strong></span>
               <ExternalLink aria-hidden="true" />
             </a>
