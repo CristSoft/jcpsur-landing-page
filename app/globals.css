@@ -90,7 +90,12 @@ section[id] { scroll-margin-top: 104px; }
 }
 
 .brand { display: flex; align-items: center; gap: 12px; color: white; width: fit-content; }
-.brand img { width: 48px; height: 48px; padding: 6px; border-radius: 50%; background: white; }
+.brand img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
 .brand span { display: flex; flex-direction: column; line-height: 1.05; }
 .brand strong { font-size: 15px; letter-spacing: -0.01em; }
 .brand small { margin-top: 5px; font-size: 9px; font-weight: 500; opacity: .7; letter-spacing: .02em; }
