@@ -14,6 +14,7 @@ import {
   Users,
 } from 'lucide-react';
 import { MotionEffects } from '../components/motion-effects';
+import { FacebookIcon, InstagramIcon, YouTubeIcon } from '../components/social-icons';
 
 const otherChurches = [
   {
@@ -40,6 +41,27 @@ const otherChurches = [
     name: 'Barrio Frino',
     address: 'Viena 2807',
     map: 'https://www.google.com/maps/search/?api=1&query=Viena%202807%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
+  },
+];
+
+const socialMedia = [
+  {
+    name: 'YouTube',
+    handle: '@IASDJoséC.PazSur',
+    href: 'https://www.youtube.com/@IASDJos%C3%A9C.PazSur',
+    Icon: YouTubeIcon,
+  },
+  {
+    name: 'Instagram',
+    handle: '@iasdjosecpazsur',
+    href: 'https://www.instagram.com/iasdjosecpazsur/',
+    Icon: InstagramIcon,
+  },
+  {
+    name: 'Facebook',
+    handle: 'IASD José C. Paz Sur',
+    href: 'https://www.facebook.com/IASDJoseCPazSur',
+    Icon: FacebookIcon,
   },
 ];
 
@@ -264,6 +286,31 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="social-section" aria-labelledby="social-title">
+        <div className="social-heading" data-reveal>
+          <p className="section-kicker">Conectados toda la semana</p>
+          <h2 id="social-title">Seguinos en redes.</h2>
+          <p>Encontrá transmisiones, novedades y momentos de nuestra comunidad.</p>
+        </div>
+        <nav className="social-links" aria-label="Redes sociales de José C. Paz Sur">
+          {socialMedia.map(({ name, handle, href, Icon }, index) => (
+            <a
+              key={name}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              data-reveal
+              style={{ '--social-delay': `${index * 70}ms` } as React.CSSProperties}
+              aria-label={`${name}: ${handle} (abre en una pestaña nueva)`}
+            >
+              <span className="social-icon"><Icon /></span>
+              <span className="social-name"><small>{name}</small><strong>{handle}</strong></span>
+              <ExternalLink className="social-arrow" aria-hidden="true" />
+            </a>
+          ))}
+        </nav>
       </section>
 
       <footer>
