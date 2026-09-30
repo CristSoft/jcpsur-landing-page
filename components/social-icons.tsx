@@ -32,3 +32,22 @@ export function FacebookIcon(props: SocialIconProps) {
     </svg>
   );
 }
+
+export function WhatsAppIcon(props: SocialIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M20.4 11.7a8.4 8.4 0 0 1-12.3 7.4L3.5 20.5l1.4-4.4A8.4 8.4 0 1 1 20.4 11.7Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.6 7.8c.2-.3.4-.4.7-.4h.8l.8 2.2-1 1c.7 1.4 1.8 2.5 3.2 3.2l1-1 2.2.8v.8c0 .3-.1.5-.4.7-.5.3-1 .4-1.6.3-3.4-.7-5.9-3.2-6.6-6.6-.1-.6 0-1.1.3-1.6Z"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

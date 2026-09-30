@@ -2,7 +2,6 @@ import {
   ArrowDown,
   ArrowRight,
   BookOpen,
-  BookOpenText,
   CalendarDays,
   Clock3,
   Compass,
@@ -15,32 +14,41 @@ import {
   Volleyball,
 } from 'lucide-react';
 import { MotionEffects } from '../components/motion-effects';
-import { FacebookIcon, InstagramIcon, YouTubeIcon } from '../components/social-icons';
+import { FacebookIcon, InstagramIcon, WhatsAppIcon, YouTubeIcon } from '../components/social-icons';
+
+const whatsappUrl = 'https://wa.me/5491169089232';
+const bibleStudyUrl = `${whatsappUrl}?text=${encodeURIComponent('¡Hola! vengo de la página web de la iglesia. Me gustaría estudiar la biblia')}`;
+const beliefsUrl = 'https://institucional.adventistas.org/es/nuestras-crencias/';
 
 const otherChurches = [
   {
     name: 'José C. Paz Centro',
-    address: 'Santiago de Compostela 477',
+    address: 'Santiago de Compostela 477 · José C. Paz',
     map: 'https://www.google.com/maps/search/?api=1&query=Santiago%20de%20Compostela%20477%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
   },
   {
     name: 'Barrio Vucetich',
-    address: 'Santa Marta 4279',
+    address: 'Santa Marta 4279 · José C. Paz',
     map: 'https://www.google.com/maps/search/?api=1&query=Santa%20Marta%204279%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
   },
   {
+    name: 'Croacia Norte',
+    address: 'Alberti 4280 · José C. Paz',
+    map: 'https://www.google.com/maps/search/?api=1&query=Alberti%204280%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
+  },
+  {
     name: 'Barrio Sagrada Familia',
-    address: 'Uspallata 2024',
+    address: 'Uspallata 2024 · José C. Paz',
     map: 'https://www.google.com/maps/search/?api=1&query=Uspallata%202024%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
   },
   {
     name: 'Barrio Primavera',
-    address: 'Adolfo Alsina 5989',
+    address: 'Adolfo Alsina 5989 · José C. Paz',
     map: 'https://www.google.com/maps/search/?api=1&query=Adolfo%20Alsina%205989%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
   },
   {
     name: 'Barrio Frino',
-    address: 'Viena 2807',
+    address: 'Viena 2807 · José C. Paz',
     map: 'https://www.google.com/maps/search/?api=1&query=Viena%202807%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires',
   },
   {
@@ -86,17 +94,18 @@ export default function Home() {
     <main>
       <MotionEffects />
       <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="Iglesia Adventista José C. Paz Sur, inicio">
-          <img src="/logo-jcp-sur.svg" alt="" />
+        <a className="brand" href="#inicio" aria-label="Iglesia Adventista Del Séptimo Día, José C. Paz Sur, inicio">
+          <img src="/logo-adventista.png" alt="" />
           <span>
-            <strong>José C. Paz Sur</strong>
-            <small>Iglesia Adventista del Séptimo Día</small>
+            <strong>Iglesia Adventista<br />Del Séptimo Día</strong>
+            <small>José C. Paz Sur</small>
           </span>
         </a>
         <nav aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
           <a href="#nosotros">Nosotros</a>
           <a href="#servicios">Servicios</a>
-          <a href="#biblia">Conocé más</a>
+          <a href="#ubicacion">Ubicación</a>
           <a href="#redes">Redes sociales</a>
         </nav>
         <a className="header-cta" href="#ubicacion">
@@ -109,8 +118,8 @@ export default function Home() {
         <div className="hero-orbit hero-orbit-one" aria-hidden="true" />
         <div className="hero-orbit hero-orbit-two" aria-hidden="true" />
         <div className="hero-content">
-          <p className="eyebrow"><span /> Una comunidad para vos</p>
-          <h1>Un lugar para<br /><em>encontrarnos.</em></h1>
+          <p className="eyebrow"><span /> Un lugar para vos</p>
+          <h1>¡Te estábamos<br /><em>esperando!</em></h1>
           <div className="hero-socials" aria-label="Seguinos en redes sociales">
             {socialMedia.map(({ name, handle, href, Icon }) => (
               <a
@@ -124,14 +133,26 @@ export default function Home() {
                 <Icon />
               </a>
             ))}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp: Contactanos (abre en una pestaña nueva)"
+              title="Escribinos por WhatsApp"
+            >
+              <WhatsAppIcon />
+            </a>
           </div>
           <p className="hero-lead">
-            Compartimos la fe, estudiamos la Biblia, oramos y crecemos juntos como familia.
-            <strong> Todos son bienvenidos.</strong>
+            Contactate con nosotros, dejanos tu pedido de oración, solicitá un estudio de la Biblia o acercate a nuestra iglesia.
+            <strong> Siempre sos bienvenido.</strong>
           </p>
           <div className="hero-actions">
             <a className="primary-link" href="#servicios">
               Ver días y horarios <CalendarDays aria-hidden="true" />
+            </a>
+            <a className="primary-link" href={bibleStudyUrl} target="_blank" rel="noreferrer">
+              Quiero estudiar la biblia <WhatsAppIcon />
             </a>
             <a className="text-link" href="#nosotros">
               Conocé nuestra historia <ArrowDown aria-hidden="true" />
@@ -157,18 +178,12 @@ export default function Home() {
         </aside>
 
         <div className="hero-watermark" aria-hidden="true">
-          <img src="/logo-jcp-sur.svg" alt="" />
+          <img src="/logo-adventista.png" alt="" />
         </div>
         <a className="scroll-cue" href="#nosotros" aria-label="Continuar hacia nuestra historia">
           <span /> Seguí descubriendo
         </a>
       </section>
-
-      <div className="story-strip" aria-label="Nuestros valores">
-        <span>Fe que acompaña</span><i aria-hidden="true" />
-        <span>Esperanza compartida</span><i aria-hidden="true" />
-        <span>Comunidad que abraza</span>
-      </div>
 
       <section className="welcome" id="nosotros">
         <p className="section-kicker" data-reveal>Desde 1987 en José C. Paz</p>
@@ -183,7 +198,12 @@ export default function Home() {
               Desde 1991 nos reunimos en nuestro templo de Av. Gaspar Campos 5738 para compartir
               la fe, estudiar la Biblia, orar y crecer juntos como familia.
             </p>
-            <a href="#ubicacion">Vení a conocernos <ArrowRight aria-hidden="true" /></a>
+            <div className="welcome-actions">
+              <a className="primary-link" href={beliefsUrl} target="_blank" rel="noreferrer">
+                Nuestras creencias <ExternalLink aria-hidden="true" />
+              </a>
+              <a className="welcome-text-link" href="#ubicacion">Vení a conocernos <ArrowRight aria-hidden="true" /></a>
+            </div>
           </div>
         </div>
       </section>
@@ -192,7 +212,7 @@ export default function Home() {
         <div className="services-heading" data-reveal>
           <div>
             <p className="section-kicker">Durante toda la semana</p>
-            <h2>Servicios permanentes<br />de JCP Sur.</h2>
+            <h2>Servicios y actividades<br />de nuestra iglesia</h2>
           </div>
           <p>
             Espacios para adorar, aprender, orar, ayudar y crecer en comunidad. Elegí el que
@@ -259,38 +279,10 @@ export default function Home() {
           <article className="service-card" data-reveal data-pointer-card>
             <img className="service-image" src="/img/08_club_de_conquistadores.png" alt="" aria-hidden="true" />
             <span className="service-icon"><Compass aria-hidden="true" /></span>
-            <p>Domingos · 10:00 hs</p>
+            <p>Sábados 16:30 y Domingos 10:30 hs</p>
             <h3>Club de Conquistadores</h3>
             <span>Actividades tipo scouts para niños y adolescentes</span>
           </article>
-        </div>
-      </section>
-
-      <section className="bible-section" id="biblia">
-        <div className="bible-inner">
-          <div className="bible-heading" data-reveal>
-            <span className="bible-icon"><BookOpenText aria-hidden="true" /></span>
-            <p className="section-kicker">Un camino para descubrir</p>
-            <h2>¿Querés conocer más sobre la Biblia?</h2>
-            <p>
-              Podés empezar a estudiarla a tu ritmo o acercarte para compartir preguntas,
-              aprender y conversar con nosotros.
-            </p>
-          </div>
-          <div className="resource-list" data-reveal>
-            <a href="/Cursos_B%C3%ADblicos_NT2026_Cat%C3%A1logo_Oficial_(16).pdf" target="_blank" rel="noreferrer">
-              <span><small>Recursos en línea</small><strong>Estudios bíblicos</strong></span>
-              <ExternalLink aria-hidden="true" />
-            </a>
-            <a href="https://institucional.adventistas.org/es/nuestras-crencias/" target="_blank" rel="noreferrer">
-              <span><small>Conocé nuestra fe</small><strong>Creencias adventistas</strong></span>
-              <ExternalLink aria-hidden="true" />
-            </a>
-            <a className="resource-local" href="#ubicacion">
-              <span><small>De manera presencial</small><strong>Estudiá con nosotros</strong></span>
-              <ArrowRight aria-hidden="true" />
-            </a>
-          </div>
         </div>
       </section>
 
@@ -367,8 +359,8 @@ export default function Home() {
 
       <footer>
         <a className="brand footer-brand" href="#inicio">
-          <img src="/logo-jcp-sur.svg" alt="" />
-          <span><strong>José C. Paz Sur</strong><small>Iglesia Adventista del Séptimo Día</small></span>
+          <img src="/logo-adventista.png" alt="" />
+          <span><strong>Iglesia Adventista<br />Del Séptimo Día</strong><small>José C. Paz Sur</small></span>
         </a>
         <p>Fe, esperanza y encuentro.</p>
         <a href="#inicio">Volver arriba <ArrowRight aria-hidden="true" /></a>
