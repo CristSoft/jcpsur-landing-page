@@ -1,0 +1,32 @@
+name: Deploy Firebase Hosting
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: firebase-hosting-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.repository == 'CristSoft/jcpsur-landing-page' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build:firebase
+      - uses: google-github-actions/auth@v3
+        with:
+          project_id: adventistasjosecpaz
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: firebase-hosting-deployer@adventistasjosecpaz.iam.gserviceaccount.com
+      - run: npx --yes firebase-tools@15.15.0 deploy --only hosting --project adventistasjosecpaz --non-interactive

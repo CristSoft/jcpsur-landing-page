@@ -52,6 +52,12 @@ Ese comando prepara los archivos en `dist/firebase`. Para publicarlos en tu prop
 
 El comando `npm run deploy:firebase` de este repositorio usa credenciales locales y un ID de proyecto específicos de José C. Paz Sur; **no sirve directamente para otra iglesia**. También podés publicar la página en otro servicio compatible con este proyecto.
 
+### Despliegue automático de José C. Paz Sur
+
+Cada push a `main` en `CristSoft/jcpsur-landing-page` ejecuta `.github/workflows/deploy-firebase.yml`: instala dependencias, genera el sitio estático y publica únicamente Firebase Hosting en el proyecto `adventistasjosecpaz`. Los pull requests y forks no tienen acceso al despliegue.
+
+GitHub Actions se autentica mediante Workload Identity Federation, sin una sesión personal de Firebase ni una llave privada guardada en GitHub. La variable del repositorio `GCP_WORKLOAD_IDENTITY_PROVIDER` debe contener el nombre completo del proveedor de identidad de Google Cloud. Ese proveedor debe aceptar solo tokens del repositorio y la rama `main`; la cuenta `firebase-hosting-deployer@adventistasjosecpaz.iam.gserviceaccount.com` debe permitir suplantación únicamente desde esa identidad y tener los roles `Firebase Hosting Admin` y `API Keys Viewer` para el proyecto. La primera ejecución del flujo verifica que esa vinculación funcione.
+
 ## Licencia y recursos gráficos
 
 El código y la documentación de este proyecto se comparten bajo la [licencia MIT](LICENSE). Podés usarlos, modificarlos y publicarlos conservando el aviso de licencia y autoría.
