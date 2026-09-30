@@ -66,6 +66,11 @@ const otherChurches = [
     address: 'Miguel Gerónimo Galarza 5406 · Cuartel V, Moreno',
     map: 'https://www.google.com/maps/search/?api=1&query=Iglesia%20Adventista%20del%207%C2%BA%20D%C3%ADa%2C%20Miguel%20Ger%C3%B3nimo%20Galarza%205406%2C%20Cuartel%20V%2C%20Moreno%2C%20Buenos%20Aires',
   },
+  {
+    name: 'Más ubicaciones',
+    address: 'Encuentra una iglesia en cualquier parte del mundo',
+    map: 'https://iglesias.adventistas.org',
+  },
 ];
 
 const socialMedia = [
