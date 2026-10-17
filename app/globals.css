@@ -263,6 +263,12 @@ html { scroll-padding-bottom: var(--featured-news-height); }
 .hero-socials a { width: 42px; height: 42px; display: grid; place-items: center; color: #8addf0; border: 1px solid rgba(129,218,239,.24); border-radius: 50%; background: rgba(255,255,255,.055); transition: color .22s ease, background .22s ease, border-color .22s ease, transform .22s ease, box-shadow .22s ease; }
 .hero-socials a:hover, .hero-socials a:focus-visible { color: #06304b; border-color: #7ad9ec; background: #7ad9ec; transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,20,38,.22); }
 .hero-socials svg { width: 19px; height: 19px; }
+.hero-socials:has(.youtube-live-link) { flex-wrap: wrap; }
+.hero-socials a.youtube-live-link { width: auto; display: flex; gap: 10px; padding: 0 14px; border-radius: 24px; color: #fff; border-color: rgba(255,255,255,.4); background: rgba(3,31,52,.65); }
+.hero-socials a.youtube-live-link:hover, .hero-socials a.youtube-live-link:focus-visible { color: #fff; background: #073b62; }
+.youtube-live-status { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 750; line-height: 1.5; }
+.youtube-live-dot { flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%; background: #ff5252; box-shadow: 0 0 0 3px rgba(255,82,82,.14); animation: youtube-live-blink 1.5s ease-in-out infinite; }
+@keyframes youtube-live-blink { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
 .hero-lead { max-width: 620px; margin: 24px 0 0; color: rgba(240,249,255,.72); font-size: clamp(16px, 1.6vw, 20px); line-height: 1.7; }
 .hero-lead strong { color: white; font-weight: 600; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 36px; }
@@ -462,6 +468,7 @@ footer > a:last-child svg { width: 16px; transform: rotate(-90deg); }
 
 @media (max-width: 540px) {
   section[id] { scroll-margin-top: 126px; }
+  .hero-socials a.youtube-live-link { flex-basis: 100%; justify-content: center; }
   .site-header { height: 116px; grid-template-rows: 70px 46px; }
   .brand img { width: 42px; height: 42px; }
   .brand small { margin-top: 4px; font-size: 10px; letter-spacing: 0; white-space: nowrap; }

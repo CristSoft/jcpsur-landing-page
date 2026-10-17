@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { MotionEffects } from '../components/motion-effects';
 import { FeaturedNews } from '../components/featured-news';
+import { YouTubeLink } from '../components/youtube-link';
 import { FacebookIcon, InstagramIcon, WhatsAppIcon, YouTubeIcon } from '../components/social-icons';
 
 const whatsappUrl = 'https://wa.me/5491169089232';
@@ -127,7 +128,9 @@ export default function Home() {
           <p className="eyebrow"><span /> Un lugar para vos</p>
           <h1>¡Te estábamos<br /><em>esperando!</em></h1>
           <div className="hero-socials" aria-label="Seguinos en redes sociales">
-            {socialMedia.map(({ name, handle, href, Icon }) => (
+            {socialMedia.map(({ name, handle, href, Icon }) => name === 'YouTube' ? (
+              <YouTubeLink key={name} href={href} handle={handle} />
+            ) : (
               <a
                 key={name}
                 href={href}
@@ -345,7 +348,9 @@ export default function Home() {
           <p>Encontrá transmisiones, novedades y momentos de nuestra comunidad.</p>
         </div>
         <nav className="social-links" aria-label="Redes sociales de José C. Paz Sur">
-          {socialMedia.map(({ name, handle, href, Icon }, index) => (
+          {socialMedia.map(({ name, handle, href, Icon }, index) => name === 'YouTube' ? (
+            <YouTubeLink key={name} href={href} handle={handle} variant="card" />
+          ) : (
             <a
               key={name}
               href={href}
