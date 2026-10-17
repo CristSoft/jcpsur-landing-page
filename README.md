@@ -64,4 +64,6 @@ El código y la documentación de este proyecto se comparten bajo la [licencia M
 
 Los archivos de `public/` —incluidos logos, imágenes, íconos y documentos— **no están incluidos en la licencia MIT**. Se muestran como contenido de ejemplo de José C. Paz Sur. Antes de publicar una adaptación, reemplazalos por materiales que tu iglesia tenga permiso de usar y revisá también los enlaces y datos de contacto.
 
+Los botones de los clubes El Faro usan el [emblema de Conquistadores de Adventistas.org](https://www.adventistas.org/es/conquistadores/simbolos-del-club/) y el [emblema de Aventureros en español de Mundo J.A](https://mundoja.org/recurso/logos), en versiones optimizadas para la web. Sus enlaces de Instagram se configuran en `socialMedia`, en `app/page.tsx`.
+
 **Objetivo del proyecto:** facilitar que más iglesias tengan una presencia web clara y útil, partiendo de un ejemplo real que puedan adaptar a su comunidad.

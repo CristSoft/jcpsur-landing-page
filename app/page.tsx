@@ -16,6 +16,7 @@ import {
 import { MotionEffects } from '../components/motion-effects';
 import { FeaturedNews } from '../components/featured-news';
 import { YouTubeLink } from '../components/youtube-link';
+import { AventurerosIcon, ConquistadoresIcon } from '../components/club-icons';
 import { FacebookIcon, InstagramIcon, WhatsAppIcon, YouTubeIcon } from '../components/social-icons';
 
 const whatsappUrl = 'https://wa.me/5491169089232';
@@ -93,6 +94,18 @@ const socialMedia = [
     handle: 'IASD José C. Paz Sur',
     href: 'https://www.facebook.com/IASDJoseCPazSur',
     Icon: FacebookIcon,
+  },
+  {
+    name: 'Conquistadores',
+    handle: '@clubelfarobuenosaires',
+    href: 'https://www.instagram.com/clubelfarobuenosaires/',
+    Icon: ConquistadoresIcon,
+  },
+  {
+    name: 'Aventureros',
+    handle: '@aventureros.elfaro',
+    href: 'https://www.instagram.com/aventureros.elfaro/',
+    Icon: AventurerosIcon,
   },
 ];
 
@@ -353,6 +366,7 @@ export default function Home() {
           ) : (
             <a
               key={name}
+              className={name === 'Conquistadores' || name === 'Aventureros' ? 'club-social-link' : undefined}
               href={href}
               target="_blank"
               rel="noreferrer"

@@ -259,10 +259,11 @@ html { scroll-padding-bottom: var(--featured-news-height); }
 .hero h1, .welcome h2 { margin: 0; font-family: var(--font-lora), Georgia, serif; font-weight: 500; letter-spacing: -.055em; line-height: .96; }
 .hero h1 { font-size: clamp(58px, 6vw, 92px); }
 .hero h1 em, .welcome h2 em { color: #69d0eb; font-weight: 400; }
-.hero-socials { display: flex; align-items: center; gap: 10px; margin-top: 24px; }
+.hero-socials { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 24px; }
 .hero-socials a { width: 42px; height: 42px; display: grid; place-items: center; color: #8addf0; border: 1px solid rgba(129,218,239,.24); border-radius: 50%; background: rgba(255,255,255,.055); transition: color .22s ease, background .22s ease, border-color .22s ease, transform .22s ease, box-shadow .22s ease; }
 .hero-socials a:hover, .hero-socials a:focus-visible { color: #06304b; border-color: #7ad9ec; background: #7ad9ec; transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,20,38,.22); }
 .hero-socials svg { width: 19px; height: 19px; }
+.club-social-logo { display: block; width: 30px; height: 30px; object-fit: contain; }
 .hero-socials:has(.youtube-live-link) { flex-wrap: wrap; }
 .hero-socials a.youtube-live-link { width: auto; display: flex; gap: 10px; padding: 0 14px; border-radius: 24px; color: #fff; border-color: rgba(255,255,255,.4); background: rgba(3,31,52,.65); }
 .hero-socials a.youtube-live-link:hover, .hero-socials a.youtube-live-link:focus-visible { color: #fff; background: #073b62; }
@@ -373,7 +374,9 @@ html { scroll-padding-bottom: var(--featured-news-height); }
 .social-heading .section-kicker { margin-bottom: 18px; color: #78d7ec; }
 .social-heading h2 { margin: 0; font-family: var(--font-lora), Georgia, serif; font-size: clamp(40px, 4vw, 58px); font-weight: 500; letter-spacing: -.05em; line-height: 1; }
 .social-heading > p:last-child { max-width: 420px; margin: 22px 0 0; color: rgba(255,255,255,.62); font-size: 14px; line-height: 1.65; }
-.social-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.social-links { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+.social-links > a { grid-column: span 2; }
+.social-links > .club-social-link { grid-column: span 3; }
 .social-links > a { min-width: 0; min-height: 156px; padding: 22px; display: grid; grid-template-columns: 1fr auto; align-content: space-between; gap: 22px 10px; color: white; border: 1px solid rgba(255,255,255,.14); border-radius: 15px; background: rgba(255,255,255,.055); transition: transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease; }
 .social-links > a:hover, .social-links > a:focus-visible { transform: translateY(-5px); border-color: rgba(124,219,239,.46); background: rgba(255,255,255,.1); box-shadow: 0 18px 42px rgba(0,20,36,.2); }
 .social-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; color: #70d5eb; background: rgba(117,216,237,.11); transition: color .25s ease, background .25s ease, transform .25s ease; }
@@ -492,7 +495,7 @@ footer > a:last-child svg { width: 16px; transform: rotate(-90deg); }
   .address-card { padding: 28px 24px; }
   .address-card > strong { font-size: 23px; }
   .social-links { grid-template-columns: 1fr; }
-  .social-links > a { min-height: 96px; grid-template-columns: auto 1fr auto; align-content: center; align-items: center; gap: 14px; }
+  .social-links > a, .social-links > .club-social-link { grid-column: auto; min-height: 96px; grid-template-columns: auto 1fr auto; align-content: center; align-items: center; gap: 14px; }
   .social-name { grid-column: 2; }
   .social-arrow { grid-column: 3; grid-row: 1; }
   footer { grid-template-columns: 1fr; }
@@ -500,6 +503,7 @@ footer > a:last-child svg { width: 16px; transform: rotate(-90deg); }
 }
 
 @media (max-width: 360px) {
+  .hero-socials:not(:has(.youtube-live-link)) { display: grid; grid-template-columns: repeat(3, 42px); }
   .featured-news-invitation { gap: 10px; padding-right: 24px; }
   .featured-news-cover { width: 44px; }
   .featured-news-copy h2 { font-size: 20px; }
