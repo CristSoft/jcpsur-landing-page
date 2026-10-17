@@ -14,6 +14,7 @@ import {
   Volleyball,
 } from 'lucide-react';
 import { MotionEffects } from '../components/motion-effects';
+import { FeaturedNews } from '../components/featured-news';
 import { FacebookIcon, InstagramIcon, WhatsAppIcon, YouTubeIcon } from '../components/social-icons';
 
 const whatsappUrl = 'https://wa.me/5491169089232';
@@ -370,6 +371,7 @@ export default function Home() {
         <p>Fe, esperanza y encuentro.</p>
         <a href="#inicio">Volver arriba <ArrowRight aria-hidden="true" /></a>
       </footer>
+      <FeaturedNews whatsappUrl={whatsappUrl} />
     </main>
   );
 }
